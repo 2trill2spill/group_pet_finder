@@ -1,0 +1,20 @@
+<div class="navbar" ng-controller="navController">
+  <div class="navButton"><a href="#home"> Home </a></div>
+
+  <div id="lableForDropdown">Select Your Animal:</div>
+          <div class="dropdown">
+            <select id="naver" name="naver" ng-model="currentPage" ng-change="go(currentPage)">
+              <option value="" disabled>Select your animal!</option> <!-- Really wish I could have gotten my place holder to work correctly -->
+              <option value="dogs">Dogs</option>
+              <option value="cats">Cats</option>
+              <option value="birds">Birds</option>
+              <option value="reptiles">Reptiles</option>
+              <option value="horses">Horses</option>
+              <option value="pigs">Pigs</option>
+              <option value="barnyard">Barnyard</option>
+              <option value="smallfurry">Small & Furry</option>
+            </select>
+          </div>
+
+          <div class="navButton"><a href="#favorites">Favorites</a></div>
+</div>

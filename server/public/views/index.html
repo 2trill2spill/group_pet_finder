@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Data APIs!</title>
+    <link rel="stylesheet" href="/vendors/bootstrap.min.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <!-- Angular -->
+    <script type="text/javascript" src="/vendors/angular.min.js"></script>
+    <script type="text/javascript" src="/vendors/angular-route.min.js"></script>
+    <script type="text/javascript" src="/scripts/ang_app.js"></script>
+    <script type="text/javascript" src="/scripts/factories/animalFactory.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/catController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/dogController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/birdController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/horseController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/reptileController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/pigController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/barnyardController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/animalControllers/smallfurryController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/favoritesController.js"></script>
+    <script type="text/javascript" src="/scripts/controllers/navController.js"></script>
+</head>
+<body ng-app="myApp">
+  <main class="container">
+    <header ng-include="'/views/partials/header.html'"></header>
+      <div ng-include="'/views/partials/nav.html'"></div>
+      <main ng-view></main>
+      <footer ng-include="'/views/partials/footer.html'"></footer>
+    </main>
+</body>
+</html>
