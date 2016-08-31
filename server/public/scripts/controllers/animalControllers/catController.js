@@ -17,36 +17,26 @@ myApp.controller("catController", ["$scope", '$http', 'animalFactory', function(
     }
 
     $scope.favoritePet = function(animalName, animalDescription, animalPhoto, animalID) {
-
-        var animal = {
-            name: animalName,
-            description: animalDescription.substring(0, 101),
-            photo: animalPhoto,
-            pet_id: animalID,
-            pet_type: 'Cat'
-        };
-        console.log("this is your animal your animal object:", animal);
-
-        $http.post('/postAnimal', animal)
-        .then(function(response) {
-        console.log("post success response: ", response);
-
+      console.log('clicked favorite');
+      $scope.animalFactory.favoritePet(animalName, animalDescription, animalPhoto, animalID).then(function(response) {
+        $scope.favPets = $scope.animalFactory.getFavorites();
       });
-
-    };
-
-    $scope.favCount = "";
-
-    $scope.petFavCount = function(){
-
-    $http.get('/getFavCount').then(function(response) {
-    $scope.favCount = response.data;
-    console.log($scope.favCount)
+    }
 
 
 
-  })};
 
-  angular.element(document).ready($scope.petFavCount);
+      $scope.petFavCount = function() {
+        animalFactory.petFavCount().then(function(count) {
+          console.log("controllerCount: ", count);
+          $scope.favCount = count;
+        });
+      };
+
+
+
+
+    angular.element(document).ready($scope.petFavCount);
+
 
 }]);
